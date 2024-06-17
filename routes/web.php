@@ -5,8 +5,6 @@ use App\Http\Controllers\FormController;
 use App\Http\Controllers\ClienteController;
 use App\Http\Controllers\ListagemController;
 
-
-
 Route::get('/', function () {
     return view('welcome');
 });
