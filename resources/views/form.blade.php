@@ -13,7 +13,7 @@
     <div class="row g-3">
             <div class="col-sm-6 validate-me">
               <label for="nome" class="form-label">Nome<span class="text-danger">*</span></label>
-              <input required type="text" class="form-control" id="nome" name="nome" value="<?php if(!empty($id)){echo $nome;}?>" >
+              <input required type="text" class="form-control" id="nome" name="nome" value >
               <div class="invalid-feedback">
                 É necessário um nome.
               </div>
@@ -21,7 +21,7 @@
 
             <div class="col-sm-6 validate-me">
               <label for="cpf" class="form-label">CPF</label>
-              <input required type="text" class="form-control" id="cpf" name="cpf" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" placeholder="000.000.000-00" value=<?php if(!empty($id)){echo $cpf;}?> >
+              <input required type="text" class="form-control" id="cpf" name="cpf" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" placeholder="000.000.000-00" value>
               <div class="invalid-feedback">
                 CPF deve ter 11 dígitos.
               </div>
@@ -29,7 +29,7 @@
 
             <div class="col-sm-6 validate-me">
               <label for="data_nascimento" class="form-label">Data de Nascimento</label>
-              <input required type="date" class="form-control"  id="data_nascimento" name="data_nascimento" pattern="\d{2}/\d{2}/\d{4}" oninput="limitarAno(event)" max="1999-12-31" value=<?php if(!empty($id)){echo $data_nascimento;}?>>
+              <input required type="date" class="form-control"  id="data_nascimento" name="data_nascimento" pattern="\d{2}/\d{2}/\d{4}" oninput="limitarAno(event)" max="1999-12-31" value>
               <div class="invalid-feedback">
                  Por favor insira uma data menor que 01/01/2000.
               </div>
@@ -39,7 +39,7 @@
             
             <div class="col-sm-6 validate-me">
               <label for="cep" class="form-label">CEP</label>
-              <input required type="text" class="form-control" id="cep" name="cep" pattern="\d{5}-\d{3}" placeholder="00000-000" onblur="consultaCEP()" value="<?php if(!empty($id)){echo $cep;}?>">
+              <input required type="text" class="form-control" id="cep" name="cep" pattern="\d{5}-\d{3}" placeholder="00000-000" onblur="consultaCEP()" value>
               <div class="invalid-feedback cep">
                  CEP invalido!
               </div>
@@ -47,32 +47,32 @@
 
             <div class="col-sm-8">
               <label for="logradouro" class="form-label">Logradouro</label>
-              <input type="text" class="form-control" id="logradouro" name="logradouro" placeholder="Endereço" value="<?php if(!empty($id)){echo $logradouro;}?>">
+              <input type="text" class="form-control" id="logradouro" name="logradouro" placeholder="Endereço" value>
             </div>
 
             <div class="col-sm-3">
               <label for="numero" class="form-label">Numero</label>
-              <input type="number" class="form-control" id="numero" name="numero" min="0" value="<?php if(!empty($id)){echo $numero;}?>">
+              <input type="number" class="form-control" id="numero" name="numero" min="0" value>
             </div>
 
             <div class="col-sm-3">
               <label for="complemento" class="form-label">Complemento</label>
-              <input type="text" class="form-control" id="complemento" name="complemento" value="<?php if(!empty($id)){echo $complemento;}?>">
+              <input type="text" class="form-control" id="complemento" name="complemento" value>
             </div>
 
             <div class="col-sm-5">
               <label for="cidade" class="form-label">Cidade</label>
-              <input type="text" class="form-control" id="cidade" name="cidade" value="<?php if(!empty($id)){echo $cidade;}?>">
+              <input type="text" class="form-control" id="cidade" name="cidade" value>
             </div>
 
             <div class="col-sm-4">
               <label for="bairro" class="form-label">Bairro</label>
-              <input type="text" class="form-control" id="bairro" name="bairro" value="<?php if(!empty($id)){echo $bairro;}?>">
+              <input type="text" class="form-control" id="bairro" name="bairro" value>
             </div>
 
             <div class="col-sm-3">
               <label for="estado" class="form-label">Estado</label>
-              <input type="text" class="form-control" id="estado" name="estado" value="<?php if(!empty($id)){echo $estado;}?>">
+              <input type="text" class="form-control" id="estado" name="estado" value>
             </div>
           </div>
 

@@ -21,7 +21,17 @@
     <div class="container" style="display: block">
             <a class="navbar-brand" href="#">Listagem</a>
             <a href="form" class="btn btn-light me-5">Adicionar cliente</a>
+            </div>
+            <div class="d-flex">
+            @auth
+            <h1 class="navbar-brand" href="#">Bem vindo </h1>
+            <form action="/logout" method="POST">
+                @csrf
+                <a href="/logout" class="btn btn-danger me-5" onclick="event.preventDefault(); this.closest('form').submit();">Sair</a>
+            </form>
+            @endauth
         </div>
+        
     </nav>
     <div class="m-5">
         <table class="table text-white table-bg">
@@ -41,7 +51,7 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach($clientes as $cliente)
+                @foreach($cliente as $cliente)
                     <tr>
                         <td>{{ $cliente->id }}</td>
                         <td>{{ $cliente->nome }}</td>
@@ -53,6 +63,16 @@
                         <td>{{ $cliente->bairro }}</td>
                         <td>{{ $cliente->cidade }}</td>
                         <td>{{ $cliente->estado }}</td>
+                        @auth
+                        <td>
+                            <a class='btn btn-sm btn-primary' href='/edit/{{ $cliente->id }}'><i class='fa fa-pencil' aria-hidden='true'></i></a> 
+                            <form action="/cliente/{{ $cliente->id }}" method="POST" style="display: inline-block">
+                                @csrf
+                                @method('DELETE')
+                                <button type='submit' class='btn btn-sm btn-danger'><i class='fa fa-trash' aria-hidden='true'></i></button>
+                            </form>
+                        </td>
+                        @endauth
                     </tr>
                 @endforeach
             </tbody>    

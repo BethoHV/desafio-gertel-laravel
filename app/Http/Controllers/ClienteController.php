@@ -7,6 +7,16 @@ use App\Models\Cliente;
 
 class ClienteController extends Controller
 {
+    public function showForm(){
+        $cliente = Cliente::All();
+        return view('form',compact('cliente'));
+    }
+
+    public function showListagem(){
+        $cliente = Cliente::All();
+        return view('listagem',['cliente' => $cliente]);
+    }
+
     public function store(Request $request){
 
         $request->validate([
@@ -31,6 +41,26 @@ class ClienteController extends Controller
         $cliente->save();
 
         
-         return response()->json(['success' => 'Formulário enviado com sucesso!']);
+         return redirect('/listagem');
+    }
+
+    public function destroy($id){
+
+        Cliente::findOrFail($id)->delete();
+
+        return redirect('/listagem')->with('msg','Cliente excluido!');
+    }
+
+    public function edit($id){
+
+        $cliente = Cliente::findOrFail($id);
+
+        return view('edit',['cliente' => $cliente]);
+    }
+
+    public function update(Request $request){
+        Cliente::findOrFail($request->id)->update($request->all());
+
+        return redirect('/listagem')->with('msg','Cliente editado!');
     }
 }
