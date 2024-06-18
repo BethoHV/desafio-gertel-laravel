@@ -56,7 +56,7 @@
                         <td>{{ $cliente->id }}</td>
                         <td>{{ $cliente->nome }}</td>
                         <td>{{ $cliente->cpf }}</td>
-                        <td>{{ $cliente->data_nascimento }}</td>
+                        <td>{{ $cliente->data_nascimento->format("d/m/Y") }}</td>
                         <td>{{ $cliente->cep }}</td>
                         <td>{{ $cliente->logradouro }}</td>
                         <td>{{ $cliente->numero }}</td>

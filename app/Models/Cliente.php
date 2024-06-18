@@ -10,4 +10,6 @@ class Cliente extends Model
     use HasFactory;
 
     protected $guarded = [];
+
+    protected $dates = ['data_nascimento'];
 }
